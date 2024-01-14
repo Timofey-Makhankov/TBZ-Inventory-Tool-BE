@@ -40,4 +40,8 @@ public class User extends AbstractEntity {
     )
     private Set<Role> roles = new HashSet<>();
 
+    @Override
+    public String toString(){
+        return String.format("{id: %s, email: %s, firstName: %s, lastName: %s}", getId(), email, firstname, lastname);
+    }
 }

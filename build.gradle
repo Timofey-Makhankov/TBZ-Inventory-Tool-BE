@@ -1,6 +1,6 @@
 plugins {
 	id 'java'
-	id 'org.springframework.boot' version '3.2.0'
+	id 'org.springframework.boot' version '3.2.1'
 	id 'io.spring.dependency-management' version '1.1.4'
 }
 
@@ -36,7 +36,7 @@ dependencies {
 
 	implementation group: 'org.mapstruct', name: 'mapstruct', version: '1.5.2.Final'
 
-	implementation group: 'commons-validator', name: 'commons-validator', version: '1.7'
+	implementation 'commons-validator:commons-validator:1.8.0'
 
 	compileOnly 'org.projectlombok:lombok'
 

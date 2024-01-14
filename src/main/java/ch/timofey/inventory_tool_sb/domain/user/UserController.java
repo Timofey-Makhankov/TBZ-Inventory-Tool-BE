@@ -5,6 +5,7 @@ import ch.timofey.inventory_tool_sb.domain.user.dto.UserMapper;
 import ch.timofey.inventory_tool_sb.domain.user.dto.UserRegisterDTO;
 import jakarta.validation.ConstraintViolationException;
 import jakarta.validation.Valid;
+import lombok.extern.log4j.Log4j2;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -17,6 +18,7 @@ import java.util.List;
 import java.util.Objects;
 import java.util.UUID;
 
+@Log4j2
 @Validated
 @RestController
 @RequestMapping("/user")
@@ -79,16 +81,5 @@ public class UserController {
     @ExceptionHandler(MethodArgumentNotValidException.class)
     public ResponseEntity<String> handleMethodArgumentNotValidException(MethodArgumentNotValidException e) {
         return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(Objects.requireNonNull(e.getFieldError()).getDefaultMessage());
-    }
-
-    /**
-     * This Exception handler will run, when the ConstraintViolationException Exception is thrown
-     *
-     * @param e Exception
-     * @return an Error Response Entity with message
-     */
-    @ExceptionHandler(ConstraintViolationException.class)
-    public ResponseEntity<String> handleConstraintViolationException(ConstraintViolationException e) {
-        return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(e.getMessage().replace("getMembersFromGroupId.", ""));
     }
 }

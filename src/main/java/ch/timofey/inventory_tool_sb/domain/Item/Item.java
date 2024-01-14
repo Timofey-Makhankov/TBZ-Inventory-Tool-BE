@@ -18,4 +18,9 @@ public class Item extends AbstractDocumentEntity {
     private String name;
     private int quantity;
     private String category;
+
+    @Override
+    public String toString(){
+        return String.format("{id: %s, name: %s, quantity: %d, category: %s}", getId(), name, quantity, category);
+    }
 }

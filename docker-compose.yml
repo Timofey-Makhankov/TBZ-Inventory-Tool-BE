@@ -1,0 +1,13 @@
+version: '3.1'
+
+services:
+  postgresDB:
+    image: postgres:16.1-alpine3.19
+    restart: on-failure
+    ports:
+      - "5432:5432"
+    environment:
+      POSTGRES_PASSWORD: postgres
+      POSTGRES_USER: postgres
+  mongoDB:
+    image: mongo:latest
