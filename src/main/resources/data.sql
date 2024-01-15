@@ -24,6 +24,11 @@ VALUES ('2ebf301e-6c61-4076-98e3-2a38b31daf86', 'DEFAULT'),
        ('82e779f6-21fd-49df-84b4-c01f00766eff', 'ITEM_CREATE'),
        ('45ba7560-8459-4ae6-8edf-ffe204c7ddc3', 'ITEM_MODIFY'),
        ('430f4ad9-55cc-4cc4-a182-24a829de36e0', 'ITEM_DELETE')
+       --('c97c5eda-4ce4-474a-9d60-139e452a4e97', ''),
+       --('0f8577f4-d2bd-4ef0-9418-c8cddf3310da'),
+       --('7ed7c22a-fce8-4789-98b2-6769d49a1737'),
+       --('ccd65156-6dbf-4abb-82a7-118ce25ffb2a'),
+       --('2033f5f7-881a-42aa-a307-79eaf83dce0f')
 ON CONFLICT DO NOTHING;
 
 --assign roles to users
