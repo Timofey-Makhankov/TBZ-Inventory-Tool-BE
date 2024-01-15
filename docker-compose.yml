@@ -7,7 +7,15 @@ services:
     ports:
       - "5432:5432"
     environment:
+      # In Production - Change values
       POSTGRES_PASSWORD: postgres
       POSTGRES_USER: postgres
   mongoDB:
     image: mongo:latest
+    restart: on-failure
+    ports:
+      - "27017:27017"
+    environment:
+      # In Production - Change values
+      MONGO_INITDB_ROOT_USERNAME: mongoDB
+      MONGO_INITDB_ROOT_PASSWORD: mongoDB
