@@ -1,0 +1,15 @@
+meta {
+  name: getById
+  type: http
+  seq: 2
+}
+
+get {
+  url: {{BaseUrl}}/item/65a3cd895ed9664568ea055a
+  body: none
+  auth: bearer
+}
+
+auth:bearer {
+  token: {{jwtToken}}
+}

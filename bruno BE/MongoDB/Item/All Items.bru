@@ -1,0 +1,15 @@
+meta {
+  name: All Items
+  type: http
+  seq: 1
+}
+
+get {
+  url: {{BaseUrl}}/item
+  body: none
+  auth: bearer
+}
+
+auth:bearer {
+  token: {{jwtToken}}
+}

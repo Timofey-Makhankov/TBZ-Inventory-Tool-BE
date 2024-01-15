@@ -1,0 +1,23 @@
+meta {
+  name: Login
+  type: http
+  seq: 1
+}
+
+post {
+  url: {{BaseUrl}}/user/login
+  body: json
+  auth: none
+}
+
+body:json {
+  {
+    "email": "admin@example.com",
+    "password": "1234"
+  }
+}
+
+script:post-response {
+  const token = res.getHeader("authorization").split(" ")[1]
+  bru.setEnvVar("jwtToken", token)
+}
